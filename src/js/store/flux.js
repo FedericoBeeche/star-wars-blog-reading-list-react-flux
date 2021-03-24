@@ -1,29 +1,33 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			favorites: [],
+			characters: [],
+			planets: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			// exampleFunction: () => {
+			// 	getActions().changeColor(0, "green");
+			// },
+
+			getCharacters: () => {
+				const STAR_WARS_API_PEOPLE = "https://www.swapi.tech/api//people/";
+
+				fetch(STAR_WARS_API_PEOPLE, {})
+					.then(res => {
+						return res.json();
+					})
+					.then(data => {
+						console.log(`Lista de personajes ${data}`);
+						console.table(data);
+					})
+					.catch(err => {
+						console.error(`Errors: ${err}`);
+					});
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
+
+			//esta es un ejemplo del boilerplate
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
