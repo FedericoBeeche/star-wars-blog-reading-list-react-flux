@@ -6,42 +6,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: []
 		},
 		actions: {
+			getCharacters: async () => {
+				const STAR_WARS_API_PEOPLE = "https://swapi.dev/api/people/";
+				fetch(STAR_WARS_API_PEOPLE)
+					.then(res => res.json())
+					.then(data => console.log(data))
+					.catch(err => console.error(err));
+			},
+			getPlanets: async () => {
+				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets/";
+				fetch(STAR_WARS_API_PLANETS)
+					.then(res => res.json())
+					.then(data => console.log(data))
+					.catch(err => console.error(err));
+			}
+
 			// Use getActions to call a function within a fuction
 			// exampleFunction: () => {
 			// 	getActions().changeColor(0, "green");
 			// },
-
-			getCharacters: async () => {
-				const STAR_WARS_API_PEOPLE = "https://www.swapi.tech/api/people/";
-
-				await fetch(STAR_WARS_API_PEOPLE, {})
-					.then(res => {
-						return res.json();
-					})
-					.then(data => {
-						console.log(`Lista de personajes ${data}`);
-						console.table(dataCharacters);
-					})
-					.catch(err => {
-						console.error(`Errors: ${err}`);
-					});
-			},
-
-			getPlanets: async () => {
-				const STAR_WARS_API_PLANETS = "https://www.swapi.tech/api/planets/";
-
-				await fetch(STAR_WARS_API_PLANETS, {})
-					.then(res => {
-						return res.json();
-					})
-					.then(data => {
-						console.log(`Lista de planetas ${data}`);
-						console.table(dataPlanets);
-					})
-					.catch(err => {
-						console.error(`Errors: ${err}`);
-					});
-			},
 
 			// //esta es un ejemplo del boilerplate
 			// changeColor: (index, color) => {
@@ -57,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			// 	//reset the global store
 			// 	setStore({ demo: demo });
-			}
+			//}
 		}
 	};
 };
