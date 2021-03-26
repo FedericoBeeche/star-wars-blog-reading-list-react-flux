@@ -23,6 +23,11 @@ export const Characters = props => {
 										<span className="d-block">Hair Color: {item.hair_color}</span>
 										<span className="d-block">Eye Color: {item.eye_color}</span>
 									</p>
+									<Link to="/single">
+										<span className="btn btn-primary btn-lg" href="#" role="button">
+											Learn More!
+										</span>
+									</Link>
 								</div>
 							</div>
 						);
