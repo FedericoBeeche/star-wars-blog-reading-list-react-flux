@@ -3,16 +3,10 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const Characters = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
 	return (
-		<div className="jumbotron">
-			{/* ESTA DE ABAJO VENIA EN EL EJEMPLO */}
-			{/* <h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1> */}
-			<h1 className="display-4">Characters: {store.characters[params.theid].name}</h1>
-			<hr className="my-4" />
-
+		<div className="container">
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
@@ -22,6 +16,6 @@ export const Single = props => {
 	);
 };
 
-Single.propTypes = {
+Characters.propTypes = {
 	match: PropTypes.object
 };

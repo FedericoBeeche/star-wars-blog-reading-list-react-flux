@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
@@ -6,18 +7,23 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<>
-			<div className="card" style={{ width: 18 + "rem" }}>
-				<img src="..." className="card-img-top" alt="..." />
-				<div className="card-body">
-					<h5 className="card-title">Card title</h5>
-					<p className="card-text">Card Text</p>
-					<a href="#" className="btn btn-primary">
-						Learn more!
+		<div className="jumbotron jumbotron-fluid">
+			<div className="container">
+				<h1 className="display-4">Star Wars Blog!</h1>
+				<p className="lead">
+					Select one of the following buttons to read more about Star Wars characters and planets.
+				</p>
+				<Link to="/characters">
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Characters
 					</a>
-				</div>
+				</Link>
+				<Link to="/planets">
+					<a className="btn btn-primary btn-lg ml-2" href="#" role="button">
+						Planets
+					</a>
+				</Link>
 			</div>
-			;
-		</>
+		</div>
 	);
 };
