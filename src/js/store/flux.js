@@ -10,14 +10,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const STAR_WARS_API_PEOPLE = "https://swapi.dev/api/people/";
 				fetch(STAR_WARS_API_PEOPLE)
 					.then(res => res.json())
-					.then(data => console.log(data))
+					.then(data => {
+						setStore({ characters: data.results });
+						console.table(data);
+					})
 					.catch(err => console.error(err));
 			},
+
 			getPlanets: async () => {
 				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets/";
 				fetch(STAR_WARS_API_PLANETS)
 					.then(res => res.json())
-					.then(data => console.log(data))
+					.then(data => {
+						setStore({ planets: data.results });
+						console.table(data);
+					})
 					.catch(err => console.error(err));
 			}
 
