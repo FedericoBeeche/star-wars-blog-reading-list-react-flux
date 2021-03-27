@@ -26,6 +26,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.table(data);
 					})
 					.catch(err => console.error(err));
+			},
+
+			addCharacterFavorite: id => {
+				const store = getStore();
+
+				let obj = store.favorites.find(obj => obj.name == store.characters[id].name);
+
+				if (obj == undefined) {
+					store.favorites.push(store.characters[id]);
+					setStore(store);
+				}
+			},
+
+			addPlanetsFavorite: id => {
+				const store = getStore();
+
+				let obj = store.favorites.find(objPlanet => objPlanet.name == store.planets[id].name);
+
+				if (obj == undefined) {
+					store.favorites.push(store.planets[id]);
+					setStore(store);
+				}
+			},
+
+			deleteFavorites: id => {
+				const store = getStore();
+
+				store.favorites.splice(id, 1);
+				setStore(store);
 			}
 
 			// Use getActions to call a function within a fuction
