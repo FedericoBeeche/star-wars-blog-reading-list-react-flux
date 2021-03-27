@@ -37,7 +37,7 @@ export const Planets = props => {
 				</div>
 			</div>
 			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
+				<span className="btn btn-primary btn-lg ml-2" href="#" role="button">
 					Back home
 				</span>
 			</Link>

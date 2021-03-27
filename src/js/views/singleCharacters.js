@@ -13,7 +13,7 @@ export const SingleCharacters = props => {
 			<div className="container">
 				<div className="row">
 					<div className="col">
-						<img className="card-img-top" src="https://picsum.photos/200/300" />
+						<img className="card-img-top imagenesCharPla" src="https://picsum.photos/200/300" />
 					</div>
 					<div className="col">
 						<h1>{character.name}</h1>
@@ -28,10 +28,32 @@ export const SingleCharacters = props => {
 						</p>
 					</div>
 				</div>
+				<div className="row">
+					<div className="col text-center">
+						<span className="d-block">Name:</span>
+						<span className="d-block">{character.name}</span>
+					</div>
+					<div className="col text-center">
+						<span className="d-block">Height:</span>
+						<span className="d-block">{character.height + "cm"}</span>
+					</div>
+					<div className="col text-center">
+						<span className="d-block">Home World:</span>
+						<Link to="/singlePlanets/:id">
+							<span className="d-block btn btn-primary btn-lg" href={character.homeworld} role="button">
+								See planet!
+							</span>
+						</Link>
+					</div>
+					<div className="col text-center">
+						<span className="d-block">Birth date:</span>
+						<span className="d-block">{character.birth_year}</span>
+					</div>
+				</div>
 			</div>
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
+			<Link to="/characters/">
+				<span className="btn btn-primary btn-lg ml-2" href="#" role="button">
+					Back to characters
 				</span>
 			</Link>
 		</>
