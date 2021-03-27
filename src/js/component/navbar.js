@@ -5,9 +5,12 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Star Wars</span>
+				<img
+					src="http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG32.png"
+					className="navbar-brand mb-0 h1 logoSW"
+				/>
 			</Link>
 			<div className="btn-group dropleft">
 				<button
@@ -17,7 +20,7 @@ export const Navbar = () => {
 					aria-haspopup="true"
 					aria-expanded="false">
 					Favorites
-					<span className="badge badge-light ml-1">{store.favorites.length}</span>
+					<span className="badge badge-light ml-1 botoncito">{store.favorites.length}</span>
 				</button>
 				<div className="dropdown-menu">Dropdown links</div>
 			</div>

@@ -52,7 +52,7 @@ export const SinglePlanets = props => {
 				</div>
 			</div>
 			<Link to="/planets/">
-				<span className="btn btn-primary btn-lg ml-2" href="#" role="button">
+				<span className="btn btn-warning btn-lg ml-2" href="#" role="button">
 					Back to planets
 				</span>
 			</Link>

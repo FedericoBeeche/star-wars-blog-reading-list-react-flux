@@ -40,7 +40,7 @@ export const SingleCharacters = props => {
 					<div className="col text-center">
 						<span className="d-block">Home World:</span>
 						<Link to="/singlePlanets/:id">
-							<span className="d-block btn btn-primary btn-lg" href={character.homeworld} role="button">
+							<span className="d-block btn btn-warning btn-lg" href={character.homeworld} role="button">
 								See planet!
 							</span>
 						</Link>
@@ -52,7 +52,7 @@ export const SingleCharacters = props => {
 				</div>
 			</div>
 			<Link to="/characters/">
-				<span className="btn btn-primary btn-lg ml-2" href="#" role="button">
+				<span className="btn btn-warning btn-lg ml-2" href="#" role="button">
 					Back to characters
 				</span>
 			</Link>

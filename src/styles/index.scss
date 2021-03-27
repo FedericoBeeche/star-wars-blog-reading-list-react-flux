@@ -1,3 +1,29 @@
 /* 
     General Styles
 */
+body {
+    background-image: url("././bg.jpg");
+    color: white;
+}   
+
+.logoSW {
+    height: 50px;
+}
+
+footer {
+    color: white;
+}
+
+.jumbotron, .card {
+    background-color: #363636;
+    color: white;
+}
+
+nav {
+    border-bottom: 2px solid #FFE81F;
+    background-color: black;
+}
+
+.card {
+    border-bottom: 2px solid gray;
+}

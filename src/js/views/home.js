@@ -14,12 +14,12 @@ export const Home = () => {
 					Select one of the following buttons to read more about Star Wars characters and planets.
 				</p>
 				<Link to="/characters">
-					<a className="btn btn-primary btn-lg" href="#" role="button">
+					<a className="btn btn-warning btn-lg" href="#" role="button">
 						Characters
 					</a>
 				</Link>
 				<Link to="/planets">
-					<a className="btn btn-primary btn-lg ml-2" href="#" role="button">
+					<a className="btn btn-warning btn-lg ml-2" href="#" role="button">
 						Planets
 					</a>
 				</Link>

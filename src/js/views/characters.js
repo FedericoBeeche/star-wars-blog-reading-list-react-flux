@@ -24,7 +24,7 @@ export const Characters = props => {
 										<span className="d-block">Eye Color: {item.eye_color}</span>
 									</p>
 									<Link to={"/singleCharacters/" + index}>
-										<span className="btn btn-primary btn-lg" href="#" role="button">
+										<span className="btn btn-warning btn-lg" href="#" role="button">
 											Learn more!
 										</span>
 									</Link>
@@ -35,7 +35,7 @@ export const Characters = props => {
 				</div>
 			</div>
 			<Link to="/">
-				<span className="btn btn-primary btn-lg ml-2" href="#" role="button">
+				<span className="btn btn-warning btn-lg ml-2" href="#" role="button">
 					Back home
 				</span>
 			</Link>
