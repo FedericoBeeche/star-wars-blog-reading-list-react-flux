@@ -26,7 +26,10 @@ export const Characters = props => {
 									<div className="row">
 										<div className="col">
 											<Link to={"/singleCharacters/" + index}>
-												<span className="btn btn-warning btn-lg" href="#" role="button">
+												<span
+													className="btn btn-warning btn-lg learnMore"
+													href="#"
+													role="button">
 													Learn more!
 												</span>
 											</Link>

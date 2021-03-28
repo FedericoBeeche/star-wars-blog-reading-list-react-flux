@@ -26,7 +26,7 @@ export const Planets = props => {
 										<span className="d-block">Climate: {item.climate}</span>
 									</p>
 									<Link to={"/singlePlanets/" + index}>
-										<span className="btn btn-warning btn-lg" href="#" role="button">
+										<span className="btn btn-warning btn-lg learnMore" href="#" role="button">
 											Learn more!
 										</span>
 									</Link>
