@@ -33,7 +33,7 @@ export const Navbar = () => {
 									}}
 									href="#">
 									{item.name}
-									<i className="far fa-trash-alt" />
+									<i className="far fa-trash-alt ml-1" />
 								</a>
 							);
 						})
