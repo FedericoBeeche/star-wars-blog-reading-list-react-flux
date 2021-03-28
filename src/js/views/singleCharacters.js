@@ -7,7 +7,6 @@ export const SingleCharacters = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	const character = store.characters[params.id];
-
 	return (
 		<>
 			<div className="container">
@@ -39,7 +38,7 @@ export const SingleCharacters = props => {
 					</div>
 					<div className="col text-center">
 						<span className="d-block">Home World:</span>
-						<Link to="/singlePlanets/:id">
+						<Link to={"/singlePlanets/" + character.homeworld}>
 							<span className="d-block btn btn-warning btn-lg" href={character.homeworld} role="button">
 								See planet!
 							</span>

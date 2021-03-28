@@ -25,11 +25,27 @@ export const Planets = props => {
 										<span className="d-block">Terrain type: {item.terrain}</span>
 										<span className="d-block">Climate: {item.climate}</span>
 									</p>
-									<Link to={"/singlePlanets/" + index}>
-										<span className="btn btn-warning btn-lg learnMore" href="#" role="button">
-											Learn more!
-										</span>
-									</Link>
+									<div className="row">
+										<div className="col">
+											<Link to={"/singlePlanets/" + index}>
+												<span
+													className="btn btn-warning btn-lg learnMore"
+													href="#"
+													role="button">
+													Learn more!
+												</span>
+											</Link>
+										</div>
+										<div className="col text-right">
+											<button
+												onClick={() => {
+													actions.addPlanetsFavorite(index);
+												}}
+												className="btn btn-warning">
+												<i className="far fa-heart" />
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						);
