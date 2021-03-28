@@ -23,11 +23,24 @@ export const Characters = props => {
 										<span className="d-block">Hair Color: {item.hair_color}</span>
 										<span className="d-block">Eye Color: {item.eye_color}</span>
 									</p>
-									<Link to={"/singleCharacters/" + index}>
-										<span className="btn btn-warning btn-lg" href="#" role="button">
-											Learn more!
-										</span>
-									</Link>
+									<div className="row">
+										<div className="col">
+											<Link to={"/singleCharacters/" + index}>
+												<span className="btn btn-warning btn-lg" href="#" role="button">
+													Learn more!
+												</span>
+											</Link>
+										</div>
+										<div className="col text-right">
+											<button
+												onClick={() => {
+													actions.addCharacterFavorite(index);
+												}}
+												className="btn btn-warning">
+												<i className="far fa-heart" />
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						);

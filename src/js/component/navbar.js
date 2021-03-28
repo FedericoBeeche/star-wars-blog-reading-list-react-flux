@@ -12,17 +12,35 @@ export const Navbar = () => {
 					className="navbar-brand mb-0 h1 logoSW"
 				/>
 			</Link>
-			<div className="btn-group dropleft">
+			<div className="dropdown ml-auto dropleft">
 				<button
+					className="btn btn-warning dropdown-toggle"
 					type="button"
-					className="btn btn-secondary dropdown-toggle"
-					data-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false">
+					id="dropdownMenuButton"
+					data-toggle="dropdown">
 					Favorites
-					<span className="badge badge-light ml-1 botoncito">{store.favorites.length}</span>
+					<span className="badge badge-dark ml-1">{store.favorites.length}</span>
 				</button>
-				<div className="dropdown-menu">Dropdown links</div>
+				<div className="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+					{store.favorites.length > 0 ? (
+						store.favorites.map((item, index) => {
+							return (
+								<a
+									className="dropdown-item"
+									key={index}
+									onClick={() => {
+										actions.deleteFavorites(index);
+									}}
+									href="#">
+									{item.name}
+									<i className="far fa-trash-alt" />
+								</a>
+							);
+						})
+					) : (
+						<p className="text-center">Empty</p>
+					)}
+				</div>
 			</div>
 		</nav>
 	);
