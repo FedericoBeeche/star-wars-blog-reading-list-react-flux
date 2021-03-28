@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			characters: [],
+			charactersHomeworld: [],
 			planets: []
 		},
 		actions: {

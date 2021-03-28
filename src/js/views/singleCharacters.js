@@ -37,12 +37,16 @@ export const SingleCharacters = props => {
 						<span className="d-block">{character.height + "cm"}</span>
 					</div>
 					<div className="col text-center">
-						<span className="d-block">Home World:</span>
-						<Link to={"/singlePlanets/" + character.homeworld}>
+						<span className="d-block">Mass:</span>
+						<span className="d-block">{character.mass + "kg"}</span>
+						{/* intente linkear mil veces esto de todas las maneras posibles pero no pude, intente hacer maps, condicionales, pero no lo logre */}
+						{/* creo que la razon es porque el API me tira un URL en vez de un identificador para el planeta */}
+						{/* voy a seguir intentando y si lo logro lo agrego al repo :D */}
+						{/* <Link to={"/singlePlanets/" + character.homeworld}>
 							<span className="d-block btn btn-warning btn-lg" href={character.homeworld} role="button">
 								See planet!
 							</span>
-						</Link>
+						</Link> */}
 					</div>
 					<div className="col text-center">
 						<span className="d-block">Birth date:</span>

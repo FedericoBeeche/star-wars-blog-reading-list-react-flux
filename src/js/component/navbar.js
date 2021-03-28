@@ -22,6 +22,7 @@ export const Navbar = () => {
 					<span className="badge badge-dark ml-1">{store.favorites.length}</span>
 				</button>
 				<div className="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+					{/* despues de esto voy a agregarle que linkee a la pagina del favorite */}
 					{store.favorites.length > 0 ? (
 						store.favorites.map((item, index) => {
 							return (
