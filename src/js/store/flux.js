@@ -3,16 +3,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			characters: [],
-			charactersHomeworld: [],
 			planets: []
 		},
 		actions: {
+			setLocalStorage: (characters, planets, favorites) => {
+				setStore(JSON.parse(characters));
+				setStore(JSON.parse(planets));
+				setStore(JSON.parse(favorites));
+			},
+
 			getCharacters: async () => {
 				const STAR_WARS_API_PEOPLE = "https://swapi.dev/api/people/";
 				fetch(STAR_WARS_API_PEOPLE)
 					.then(res => res.json())
 					.then(data => {
 						setStore({ characters: data.results });
+						localStorage.setItem("characters", JSON.stringify({ characters: data.results }));
 						console.table(data);
 					})
 					.catch(err => console.error(err));
@@ -24,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(data => {
 						setStore({ planets: data.results });
+						localStorage.setItem("planets", JSON.stringify({ planets: data.results }));
 						console.table(data);
 					})
 					.catch(err => console.error(err));
@@ -32,22 +39,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addCharacterFavorite: id => {
 				const store = getStore();
 
-				let obj = store.favorites.find(obj => obj.name == store.characters[id].name);
+				let data = store.favorites.find(data => data.name == store.characters[id].name);
 
-				if (obj == undefined) {
+				if (data == undefined) {
 					store.favorites.push(store.characters[id]);
 					setStore(store);
+					localStorage.setItem("favorites", JSON.stringify(store.favorites));
 				}
 			},
 
 			addPlanetsFavorite: id => {
 				const store = getStore();
 
-				let obj = store.favorites.find(objPlanet => objPlanet.name == store.planets[id].name);
+				let data = store.favorites.find(dataPlanet => dataPlanet.name == store.planets[id].name);
 
-				if (obj == undefined) {
+				if (data == undefined) {
 					store.favorites.push(store.planets[id]);
 					setStore(store);
+					localStorage.setItem("favorites", JSON.stringify(store.favorites));
 				}
 			},
 
@@ -56,6 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				store.favorites.splice(id, 1);
 				setStore(store);
+				localStorage.setItem("favorites", JSON.stringify(store.favorites));
 			}
 		}
 	};

@@ -22,8 +22,16 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.getCharacters();
-			state.actions.getPlanets();
+			if (localStorage.getItem("characters") == undefined) {
+				state.actions.getCharacters();
+				state.actions.getPlanets();
+			} else {
+				state.actions.setLocalStorage(
+					localStorage.getItem("characters"),
+					localStorage.getItem("planets"),
+					localStorage.getItem("favorites")
+				);
+			}
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
