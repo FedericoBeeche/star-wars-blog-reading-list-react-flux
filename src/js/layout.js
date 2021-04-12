@@ -8,8 +8,9 @@ import { Characters } from "./views/characters";
 import { SingleCharacters } from "./views/singleCharacters";
 import { SinglePlanets } from "./views/singlePlanets";
 import { LandingPage } from "./views/landingPage";
-import { AccountCreation } from "./views/accountCreation";
+import { SignIn } from "./views/signIn";
 import injectContext from "./store/appContext";
+import { Link } from "react-router-dom";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -29,11 +30,11 @@ const Layout = () => {
 						<Route exact path="/">
 							<LandingPage />
 						</Route>
-						{/* <Route exact path="/">
+						<Route exact path="/home">
 							<Home />
-						</Route> */}
-						<Route exact path="/accountCreation/">
-							<AccountCreation />
+						</Route>
+						<Route exact path="/signIn/">
+							<SignIn />
 						</Route>
 						<Route exact path="/planets/">
 							<Planets />
@@ -48,7 +49,12 @@ const Layout = () => {
 							<SinglePlanets />
 						</Route>
 						<Route>
-							<h1>Not found!</h1>
+							<h1 className="ml-2">Woops! Page not found</h1>
+							<Link to="/home">
+								<span className="btn btn-warning btn-lg ml-2" href="#" role="button">
+									Go back home
+								</span>
+							</Link>
 						</Route>
 					</Switch>
 					<Footer />

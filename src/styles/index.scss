@@ -5,7 +5,7 @@ html, body {
     background-image: url("././bg.jpg");
     color: white;
     height: 100%;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Teko', sans-serif;
 }   
 
 .logoSW {
@@ -40,17 +40,24 @@ nav {
 }
 
 .loginForm {
+    width: 50%;
+    border-radius: 10px;
     text-align: center;
     background-color: #363636;
-    box-shadow: 0px 0px 15px #959595;
-    height: 250px;
+    box-shadow: 0px 5px 15px #3a3a3a;
+    padding: 10px
 }
 
-.loginRightBox {
-    width: 50%;
+.loginForm:hover {
+    box-shadow: 0px 5px 15px #FFE81F;
+    transition: 1.5s;
 }
 
-.imgLoginBox {
-    width: 500px;
-    object-fit: contain;
+.btnCreate {
+    cursor: pointer;
+}
+
+.inputLogin:focus {
+    box-shadow: 0px 0px 10px white;
+    transition: 1.5s;
 }
