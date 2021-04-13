@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPlanets: async () => {
-				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets/";
+				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets";
 				fetch(STAR_WARS_API_PLANETS)
 					.then(res => res.json())
 					.then(data => {

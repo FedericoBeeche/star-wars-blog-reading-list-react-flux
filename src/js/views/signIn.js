@@ -26,7 +26,7 @@ export const SignIn = () => {
 					<h3>
 						<small>
 							Need an an account? Click{" "}
-							<Link to="/">
+							<Link to="/landingPage">
 								<a>here</a>
 							</Link>{" "}
 							to create account.

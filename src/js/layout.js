@@ -28,10 +28,10 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<LandingPage />
-						</Route>
-						<Route exact path="/home">
 							<Home />
+						</Route>
+						<Route exact path="/landingPage">
+							<LandingPage />
 						</Route>
 						<Route exact path="/signIn/">
 							<SignIn />
