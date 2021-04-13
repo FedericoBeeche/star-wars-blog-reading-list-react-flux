@@ -11,6 +11,9 @@ export const LandingPage = () => {
 	const handleClick = () => {
 		const options = {
 			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
 			body: JSON.stringify({
 				email: email,
 				password: password
