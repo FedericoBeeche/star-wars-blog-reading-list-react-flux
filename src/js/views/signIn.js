@@ -10,7 +10,7 @@ export const SignIn = () => {
 		<div className="container">
 			<div className="d-flex mx-auto loginContainer">
 				<div className="loginForm">
-					<h1>Sign in</h1>
+					<h1>Create account</h1>
 					<h2>Name</h2>
 					<input className="inputLogin" type="text" placeholder="your@email.com" />
 					<h2>Last name</h2>
@@ -21,15 +21,15 @@ export const SignIn = () => {
 					<input className="inputLogin" type="password" placeholder="Password" />
 					<br />
 					<span className="btn btn-warning btn-lg ml-2 mt-3 btnCreate" href="#" role="button">
-						Sign in
+						Create
 					</span>
 					<h3>
 						<small>
-							Need an an account? Click{" "}
+							Already have an account? Click{" "}
 							<Link to="/landingPage">
 								<a>here</a>
 							</Link>{" "}
-							to create account.
+							.
 						</small>
 					</h3>
 				</div>

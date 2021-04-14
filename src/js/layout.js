@@ -30,7 +30,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/landingPage">
+						<Route exact path="/landingPage/">
 							<LandingPage />
 						</Route>
 						<Route exact path="/signIn/">

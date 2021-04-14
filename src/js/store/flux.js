@@ -3,13 +3,49 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			characters: [],
-			planets: []
+			planets: [],
+			access_token: null
 		},
 		actions: {
 			setLocalStorage: (characters, planets, favorites) => {
 				setStore(JSON.parse(characters));
 				setStore(JSON.parse(planets));
 				setStore(JSON.parse(favorites));
+			},
+
+			syncTokenFromLocalStorage: () => {
+				const token = localStorage.getItem("access_token");
+				if (token && token != "" && token != undefined) setStore({ access_token: token });
+			},
+
+			login: async (email, password) => {
+				const options = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				};
+
+				try {
+					const response = await fetch(
+						"https://3000-peach-crayfish-r59zxn0c.ws-us03.gitpod.io/login",
+						options
+					);
+					if (response.status !== 200) {
+						alert("There was an error");
+						return false;
+					}
+					const data = await response.json();
+					localStorage.setItem("accessToken", data.access_token);
+					setStore({ access_token: data.access_token });
+					return true;
+				} catch (error) {
+					console.error("There has been an error trying to log in.");
+				}
 			},
 
 			getCharacters: async () => {
