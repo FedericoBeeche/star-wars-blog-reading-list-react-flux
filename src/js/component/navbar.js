@@ -12,6 +12,19 @@ export const Navbar = () => {
 					className="navbar-brand mb-0 h1 logoSW"
 				/>
 			</Link>
+
+			{!store.access_token ? (
+				<Link to="/landingPage/">
+					<span className="btn btn-warning btn-lg ml-2" href="#" role="button">
+						Log in
+					</span>
+				</Link>
+			) : (
+				<span onClick={() => actions.logout()} className="btn btn-warning btn-lg ml-2" href="#" role="button">
+					Log out
+				</span>
+			)}
+
 			<div className="dropdown ml-auto dropleft">
 				<button
 					className="btn btn-warning dropdown-toggle"

@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPlanets: async () => {
-				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets";
+				const STAR_WARS_API_PLANETS = "https://swapi.dev/api/planets/";
 				fetch(STAR_WARS_API_PLANETS)
 					.then(res => res.json())
 					.then(data => {
@@ -102,6 +102,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				store.favorites.splice(id, 1);
 				setStore(store);
 				localStorage.setItem("favorites", JSON.stringify(store.favorites));
+			},
+
+			logout: () => {
+				localStorage.removeItem("access_token");
+				setStore({ access_token: null });
 			}
 		}
 	};

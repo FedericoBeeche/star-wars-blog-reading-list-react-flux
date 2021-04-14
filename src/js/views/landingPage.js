@@ -9,20 +9,18 @@ export const LandingPage = () => {
 	const [password, setPassword] = useState("");
 	const history = useHistory();
 
-	// const token = localStorage.getItem("accessToken"); not needed any more since the token is now saved into the store.
-
 	const handleClick = () => {
 		actions.login(email, password);
 	};
 
-	if (store.token && store.token != "" && store.token != undefined) history.push("/");
+	if (store.access_token && store.access_token != "" && store.access_token != undefined) history.push("/");
 
 	return (
 		<div className="container">
 			<div className="loginContainer">
 				<div className="loginForm">
-					{store.token && store.token != "" && store.token != undefined ? (
-						"You are logged in with this token: " + store.token
+					{store.access_token && store.access_token != "" && store.access_token != undefined ? (
+						"You are logged in with this token: " + store.access_token
 					) : (
 						<div>
 							<h1>Sign in</h1>
@@ -55,7 +53,7 @@ export const LandingPage = () => {
 									Need an account? Click{" "}
 									<Link to="/signIn/">
 										<a>here</a>
-									</Link>
+									</Link>{" "}
 									to create account.
 								</small>
 							</h3>
